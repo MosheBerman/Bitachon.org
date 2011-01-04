@@ -1,0 +1,391 @@
+/* ---------------------------------------------
+/	File: style.php
+/
+/
+/	Created By: Moshe Berman
+/
+/	On: October 14, 2010
+/
+/	Last Edited on: December 5, 2010
+/
+/	Contains: The style rules for Bitachon.org
+/
+/ ------------------------------------------- */
+
+/* --- Background color: #174e67 --- */
+/* --- Dark background: #102f3f --- */
+/* --- Link color: #3d5c6c --- */
+/* --- Error background color: #6e4652 --- */
+/* --- Error text color: #bb2026 --- */
+
+/* The universal rules */
+body{
+	background-color: #174e67;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+#wrap{
+	width: 100%;
+}
+
+/* The topbar */
+#topbar{
+	margin: auto 0;
+	height: 240px;
+	padding-top: 15px;
+	background-image: url("./images/top-gradient.png");
+	background-position: center bottom;
+	background-repeat: repeat-x;
+}
+
+#footer{
+	background-image: url("./images/bottom-gradient.png");
+	background-position: center top;
+	background-repeat: repeat-x;
+}
+
+/* The bitachon image banner */
+#banner{
+	height: 170px;
+	background-color: #000;
+	background-image: url("./images/header.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	
+}
+
+/* Everything with a dark blue bg */
+.dark-bg{
+	background-color: #102f3f;
+}
+
+/* topbar links */
+.link{
+	text-decoration: none;
+	color: #3d5c6c;
+	text-shadow: 2px 2px 2px #000;
+	font-size: 2em;
+	clear: none;
+	margin: 10px 25px;
+	line-height: 2em;
+}
+
+/* Footer link and arrow */
+#footer{
+	text-align: left;
+	color: #3d5c6c;
+	z-index: 10;
+}
+
+/* Links for toggling the footer height */
+
+#footer .toggle-link{
+  text-decoration: none;
+  color: #3d5c6c;
+  vertical-align: center;
+  padding-left: 20px;
+}
+
+#footer .close-link{
+	bottom: 0;
+	padding-bottom: 5px;
+	text-decoration: none;
+	color: #3d5c6c;
+}
+
+
+/* A rgular link in the footer */
+#footer .footer-link{
+	text-decoration: none;
+	color: #3d5c6c;
+	-moz-text-shadow: 0px 0px 2px #3d5c6c;
+	-webkit-text-shadow: 0px 0px 2px #3d5c6c;
+	text-shadow: 0px 0px 2px #3d5c6c;	
+	
+}
+
+/* Shiny links hover effect */
+#footer .shiny-link:hover{
+	-moz-text-shadow: 0px 0px 4px #3d5c6c;
+	-webkit-text-shadow: 0px 0px 4px #3d5c6c;
+	text-shadow: 0px 0px 4px #3d5c6c;
+	text-decoration: underline;
+}
+
+
+/* force the size of the arrows in footer links */
+#footer .arrow{
+	height: 10px;
+	width: 10px;
+	border: 0;
+}
+
+/* Footer Containers */
+ #footer .collapsed-view,
+ #footer .expanded-view {
+   position:absolute;
+   top:0; 
+   overflow:hidden;
+   padding: .5em 0;
+}
+
+#footer .expanded-view{
+	padding-top: 10px;
+	display: none;
+}
+
+/* Center class for the footer */
+#footer .center{
+	text-align: center;
+}
+
+/* Force containers to occupy the entire width of the footer */
+#footer .full-width{
+	width: 100%;
+}
+
+/* The Priority-1 logo in the footer */
+.footer-logo{
+	display: block;
+	margin: 0.5em auto;
+}
+
+/* The contact information container in the footer */
+#footer #contactInfo{
+    display: none;
+    height: 165px;
+}
+
+/* The request form in the footer */
+#footer #requestBitachonBuilder{
+    display: none;
+    height: 215px;
+}
+
+/* About the site. */
+#footer #aboutSite{
+    display: none;
+    height: 120px;
+}
+
+/* The site version and name line in the footer */
+#footer #aboutSite #site-info{
+	margin: 5px auto;
+	font-weight: normal;
+}
+
+/* Pad the title and the inner container in the BB request */
+#footer #requestBitachonBuilder .title, 
+#footer #requestBitachonBuilder p{
+	padding: 5px;
+}
+
+/* Universal properties for all of the footer's columns */
+#footer .footer-expanded-column{
+	display: block;
+	margin: auto;
+	text-align: center;
+}
+
+/* Define a class for footer items that have a border */
+#footer .border{
+	border: 1px solid #3d5c6c; 
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+}
+
+/* Define a narrow footer container object, for the BB request form */
+#footer .narrow{
+	width: 250px;
+}
+
+/* Define a bottom border for "titles" in expanded footer divs */
+#footer .footer-expanded-column .title{
+	border-bottom: solid 1px #3d5c6c;
+	padding-bottom: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+/* Style labels in the BB request form */
+#footer form label{
+	font-weight: bold;
+	clear: both;
+  	float: left;
+  	text-align: right;
+	margin: 0.3em 0;	
+	height: 1em;
+	line-height: 1em;
+	width: 70px;
+}
+
+/* Style the input boxes in the BB request form */
+#footer form .textbox{
+	float: left;
+	margin: 0.3em 0;
+	height: 1em;
+	line-height: 1em;
+	width: 100px;
+	margin-left: 10px;
+}
+
+/* Style address information in the footer */
+#footer address{
+	margin: auto;
+	text-align: center;
+	line-height: 1.2em;
+}
+
+/* Disguise the iPhone "phone number" link from the mouse */
+#footer .phone{
+	text-decoration: none;
+	color: #3d5c6c;
+}
+
+/* Style the submit button on the BB request form */
+
+#footer #submitButton{
+	display: block;
+	clear: both;
+	margin: auto;
+	padding-left: 5px;
+	padding-right: 5px;	
+	line-height: 2em;
+	width: 190px;
+	text-decoration:none;
+	font-size: 0.8em;
+	color: #3d5c6c;
+	border: 1px solid #3d5c6c;
+	text-shadow: 0 0 0 #000;
+	background-color: #102f3f;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;	
+}
+
+#footer #submitButton:hover{
+	display: block;
+	clear: both;
+	margin: auto;
+	line-height: 2em;
+	width: 190px;
+	text-decoration:none;
+	font-size: 0.8em;
+	color: #3d5c6c;
+	border: 1px solid #3d5c6c;
+	text-shadow: 0 0 2px #000;
+	background-color: #174e67;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;	
+}
+
+/* Add padding to the BB request box */
+#footer #BBRequestBox{
+	padding: 5px;
+	margin: 0;	
+}
+
+/* Style the response from the BB request form. */
+#footer #BBRequestBox p{
+	line-height: 1.3em;
+	font-weight: normal;
+}
+
+/* Style all of the "close" buttons in the footer views */
+#footer .hide-button{
+	clear: both;
+	margin-bottom: 0;
+}
+
+/* A generic class to align text left */
+
+.alignleft{
+	text-align: left;
+}
+
+/* Header tag fonts */
+h1{
+	font-size: 3em;
+}
+
+h2{
+	font-size: 2em;
+}
+
+h3{
+	font-size: 1.5em;
+}
+
+h4{
+	font-size: 1em;
+}
+
+h5{
+  font-size: 0.8em;
+}
+
+h6{
+  font-size: 0.5em;
+}
+
+/* Error text */
+.error{
+	color: #bb2026;
+	background-color: #6e4652;
+	border: 1px solid #bb2026;
+}
+
+.error a{
+  color: #bb2026;
+}
+
+.error a:hover{
+	color: #f00;
+	text-decoration: none;
+}
+
+/* Generic padding classes */
+.padFive{
+  padding: 5px;
+}
+
+.padTen{
+  padding: 10px;
+}
+
+.padFifteen{
+  padding: 15px;
+}
+
+/* Margin classes */
+
+.marginTopFive{
+	margin-top: 5px;
+}
+
+.marginTopTen{
+	margin-top: 10px;
+}
+
+/* Header padding */
+.header{
+  padding: 5px;
+}
+
+/* Column layouts */
+#single-col{
+	width: 600px;
+	margin: auto;
+}
+
+/* Rounded corner class */
+
+.rounded{
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
