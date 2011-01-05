@@ -36,130 +36,7 @@
 	    </style>
    <![endif]-->
    <script src="jquery-1.4.2.min.js"></script>
-   <script type="text/javascript">
-	$(document).ready(function() {
-    
-    // progressive enhancement: adjust the footer to the height
-    // of the 'collapsed-view'
-    var collapsedHeight = $('#footer .collapsed-view').outerHeight(true);
-    var expandedBBRequestHeight = $('#footer #requestBitachonBuilder').outerHeight(true);
-    var expandedContactInfoHeight = $('#footer #contactInfo').outerHeight(true);
-    var expandedAboutSiteHeight = $('#footer #aboutSite').outerHeight(true);
-    $('#footer').css({
-        'margin-top': -collapsedHeight,
-        'height': collapsedHeight
-    });
-    $('#main').css({ 'padding-bottom': collapsedHeight });
-    
-    /* Show the Bitachon Builder Request Section */
-    
-    $('#showBBRequest').click(function(evt) {
-        $('#footer .collapsed-view').fadeOut();
-        $('#main').animate({
-            'padding-bottom': expandedBBRequestHeight
-        });
-        $('#footer').animate({
-            'margin-top': -expandedBBRequestHeight,
-            'height': expandedBBRequestHeight
-        }, null, null, function() {
-            $('#footer #requestBitachonBuilder').fadeIn();
-        });
-        return false;
-    });
-    
-    /* Hide the BB Request Section */
-    
-    $('#hideBBRequest').click(function(evt) {
-        $('#footer #requestBitachonBuilder').fadeOut();
-        $('#main').animate({
-            'padding-bottom': collapsedHeight
-        });
-        $('#footer').animate({
-            'margin-top': -collapsedHeight,
-            'height':collapsedHeight
-        }, null, null, function() {
-            $('#footer .collapsed-view').fadeIn();
-        });
-        return false;
-    });
-
-	/* show the contact info footer section */
-    $('#showContactInfo').click(function(evt) {
-        $('#footer .collapsed-view').fadeOut();
-        $('#main').animate({
-            'padding-bottom': expandedContactInfoHeight
-        });
-        $('#footer').animate({
-            'margin-top': -expandedContactInfoHeight,
-            'height':expandedContactInfoHeight
-        }, null, null, function() {
-            $('#footer #contactInfo').fadeIn();
-        });
-        return false;
-    }); 
-    
-    $('#hideContactInfo').click(function(evt) {
-        $('#footer #contactInfo').fadeOut();
-        $('#main').animate({
-            'padding-bottom': collapsedHeight
-        });
-        $('#footer').animate({
-            'margin-top': -collapsedHeight,
-            'height':collapsedHeight
-        }, null, null, function() {
-            $('#footer .collapsed-view').fadeIn();
-        });
-        return false;
-    }); 
-    
-    $('#showAboutSite').click(function(evt) {
-        $('#footer .collapsed-view').fadeOut();
-        $('#main').animate({
-            'padding-bottom': expandedAboutSiteHeight
-        });
-        $('#footer').animate({
-            'margin-top': -expandedAboutSiteHeight,
-            'height':expandedAboutSiteHeight
-        }, null, null, function() {
-            $('#footer #aboutSite').fadeIn();
-        });
-        return false;
-    }); 
-    
-    $('#hideAboutSite').click(function(evt) {
-        $('#footer #aboutSite').fadeOut();
-        $('#main').animate({
-            'padding-bottom': collapsedHeight
-        });
-        $('#footer').animate({
-            'margin-top': -collapsedHeight,
-            'height':collapsedHeight
-        }, null, null, function() {
-            $('#footer .collapsed-view').fadeIn();
-        });
-        return false;
-    }); 
-    
-    /* Submit the bitachon builder request via AJAX*/
-    
-    $('#submitButton').click(function(){
-    	$('#BBRequestBox').html('<img src="images/loading.gif" />');
-  		$.ajax({
-				type: "POST",
-   				url: "./bbrequest.php",
-	   			data: {name: $('#name').val(), street: $('#street').val(), city: $('#city').val(), state: $('#state').val(), zip: $('#zip').val() },
-   				success: function(msg){
-    				$('#BBRequestBox').html('<p>' + msg + '</p>');
-				},
-				error: function(XMLHttpRequest, textStatus, errorThrown){
-					$('#BBRequestBox').html('<p> There\'s been an error: ' + errorThrown + '</p>');
-				}
-		});
-  		return false;
-	});
-		
-});   
-   </script>	
+   <script src="bitachon.js"></script>	
 	</head>
 	<body>
 		<div id="wrap">
@@ -193,11 +70,11 @@
 			  		<h4 class="title">Please enter your address:</h4>
 			  		<span id="BBRequestBox">
 					<form action="#">
-						<label>Name:</label><input type="text" id="name" class="textbox" value="" />
-						<label>Street:</label><input type="text" id="street" class="textbox" value="" />
-						<label>City:</label><input type="text" id="city"class="textbox" value="" />
-						<label>State:</label><input type="text" id="state" class="textbox" value="" />
-						<label>Zip:</label><input type="text" id="zip" class="textbox" value="" />
+						<label>Name:</label><input type="text" id="name" class="textbox"/>
+						<label>Street:</label><input type="text" id="street" class="textbox" />
+						<label>City:</label><input type="text" id="city"class="textbox" />
+						<label>State:</label><input type="text" id="state" class="textbox"/>
+						<label>Zip:</label><input type="text" id="zip" class="textbox" />
 						<input type="submit" value="Send Me a Bitachon Builder!" id="submitButton" />
 					</form>
 					</span>

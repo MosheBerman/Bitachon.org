@@ -8,7 +8,7 @@
 /
 /	On: October 14, 2010
 /
-/	Last Edited on: October 14, 2010
+/	Last Edited on: January 5, 2011
 /
 /	Contains: The header section for Bitachon.org
 /
@@ -25,3 +25,5 @@ if (!$_SESSION['valid']) {
 		die("You are not authorized"); //Saner to redirect to login page or whatever
   }
  }
+ 
+ ?>

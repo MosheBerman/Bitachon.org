@@ -1,6 +1,5 @@
 <?php
 
-
 /* ---------------------------------------------
 /	File: bbrequest.php
 /
@@ -12,12 +11,12 @@
 /	Last Edited on: December 2, 2010
 /
 /	Contains: 	The server-side AJAX logic for
-/				emailing a bitachon builder 
-/				request.
+/				emailing a bitachon builder request.
+/
 /
 / ------------------------------------------- */
 
-
+//Check to see 
 function checkReq($name){ 
 	if(isset($_POST[$name]) && $_POST[$name] != ''){
 		return true;
@@ -25,7 +24,6 @@ function checkReq($name){
 		return false; 
 	}
 }
-
 
 if(checkReq('name') && checkReq('street') && checkReq('city') && checkReq('state') && checkReq('zip')){
 
@@ -37,9 +35,9 @@ if(checkReq('name') && checkReq('street') && checkReq('city') && checkReq('state
 	
   //send the email
   echo "Your request has been sent. Please allow 6-8 weeks for delivery to: <address><br />" . $name . " <br />" . $street ." <br />" . $city . ", " . $state . " " . $zip."</address>";
-  //var_dump($_POST);
+  	
 }else{
-	echo "We were unable to send your request. Please try again, or call us at the number to the right.";
+	echo "We were unable to send your request. Please try again, or call us.";
 }
 
 ?>
