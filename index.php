@@ -68,16 +68,16 @@
 		  	  <div class="center">
 			 	 <div class="footer-expanded-column narrow border">
 			  		<h4 class="title">Please enter your address:</h4>
-			  		<span id="BBRequestBox">
+			  		<div id="BBRequestBox">
 					<form action="#">
-						<label>Name:</label><input type="text" id="name" class="textbox"/>
-						<label>Street:</label><input type="text" id="street" class="textbox" />
-						<label>City:</label><input type="text" id="city"class="textbox" />
-						<label>State:</label><input type="text" id="state" class="textbox"/>
+						<label>Name:</label><input type="text" name="name" id="name" class="textbox" />
+						<label>Street:</label><input type="text" name="street" id="street" class="textbox" />
+						<label>City:</label><input type="text" id="city" class="textbox" />
+						<label>State:</label><input type="text" id="state" class="textbox" />
 						<label>Zip:</label><input type="text" id="zip" class="textbox" />
 						<input type="submit" value="Send Me a Bitachon Builder!" id="submitButton" />
 					</form>
-					</span>
+					</div>
 				</div>
 		  </div>	
 		  <a href="" id="hideBBRequest" class="toggle-link close-link shiny-link"><img src="./images/downarrow.png" class="arrow"/> Close</a>
@@ -85,7 +85,7 @@
 		  <div id="contactInfo" class="expanded-view full-width">
 			<div class="center full-width">
 				<div class="footer-expanded-column">
-					<img src="images/logo-sm.png" id="footer-logo" />
+					<img src="images/logo-sm.png" class="footer-logo" />
 					<address>
 						Priority-1<br />
 						PO Box 486<br />
@@ -100,11 +100,12 @@
 		  <div id="aboutSite" class="expanded-view full-width">
 			<div class="center full-width">
 				<div class="footer-expanded-column">
-					<img src="images/logo-sm.png" id="footer-logo" /><br />
-					<h4 id="site-info">Bitachon.org version 1.1 <br />by <a href="http://www.mosheberman.com" class="footer-link shiny-link">Moshe Berman</a></h4>
+					<img src="images/logo-sm.png" class="footer-logo" /><br />
+					<h4 id="site-info">Bitachon.org version 0.1 by <a href="http://www.mosheberman.com" class="footer-link shiny-link">Moshe Berman</a></h4>
 				</div>
 			</div>
 			<a href="" id="hideAboutSite" class="toggle-link close-link shiny-link"><img src="./images/downarrow.png" class="arrow"/> Close</a>
+		</div>
 		</div>
 	</body>
 </html>

@@ -35,7 +35,7 @@ if(checkReq('name') && checkReq('street') && checkReq('city') && checkReq('state
 	
   //send the email
   echo "Your request has been sent. Please allow 6-8 weeks for delivery to: <address><br />" . $name . " <br />" . $street ." <br />" . $city . ", " . $state . " " . $zip."</address>";
-  	
+  
 }else{
 	echo "We were unable to send your request. Please try again, or call us.";
 }
