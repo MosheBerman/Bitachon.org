@@ -110,14 +110,19 @@ $(document).ready(function(){
     /* Submit the bitachon builder request via AJAX*/
     
     $('#submitButton').click(function(){
+    
+    	//Store the contents of the form
+    	var addressArray = new Array($('#name').val(), $('#street').val(), $('#city').val(), $('#state').val(), $('#zip').val());
+    		
+    		for(string in addressArray){
+    		  alert(string);
+    		}
     	$('#BBRequestBox').html('<img src="images/loading.gif" />');
-    	
-    	alert('Info: ' + $('#name').val() + ' ' + $('#street').val() + ' ' + $('#city').val() + ' ' +  $('#state').val() + ' ' + $('#zip').val() + ' ');
-    	//alert($('#name').length);
+  		
   		$.ajax({
 				type: "POST",
    				url: "./bbrequest.php",
-	   			data: {name: $('#name').val(), street: $('#street').val(), city: $('#city').val(), state: $('#state').val(), zip: $('#zip').val() },
+	   			data: {name: addressArray[0], street: addressArray[1], city: addressArray[2], state: addressArray[3], zip: addressArray[4] },
    				success: function(msg){
     				$('#BBRequestBox').html('<p>' + msg + '</p>');
 				},
