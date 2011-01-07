@@ -114,9 +114,6 @@ $(document).ready(function(){
     	//Store the contents of the form
     	var addressArray = new Array($('#name').val(), $('#street').val(), $('#city').val(), $('#state').val(), $('#zip').val());
     		
-    		for(string in addressArray){
-    		  alert(string);
-    		}
     	$('#BBRequestBox').html('<img src="images/loading.gif" />');
   		
   		$.ajax({
