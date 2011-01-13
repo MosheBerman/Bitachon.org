@@ -29,10 +29,6 @@ $(document).ready(function(){
     		if(formObj){
     			$('#requestForm').html(formObj);
     		}
-    		
-    
-    		// Submit the bitachon builder request via AJAX
-    		$('#submitButton').click(formClickHandler(evt));
     
     		//Hide the "show" button
     		$('#showRequestFormButton').fadeOut();
@@ -150,10 +146,9 @@ $(document).ready(function(){
         });
         return false;
     }); 
-  	
-});   
-
-function formClickHandler(evt){
+    
+    
+    $('#submitButton').live('click',function(evt){
     
     	//Store the contents of the form
     	var addressArray = new Array($('#name').val(), $('#street').val(), $('#city').val(), $('#state').val(), $('#zip').val());
@@ -177,4 +172,6 @@ function formClickHandler(evt){
 				}
 		});
   	return false;
-	}
+	});
+  	
+});   
