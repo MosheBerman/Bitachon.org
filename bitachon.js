@@ -22,31 +22,6 @@ $(document).ready(function(){
     
     /* ----------------- Show the Bitachon Builder Request Section --------------------------- */
     
-    /*
-    $('#showBBRequestButton').click(function(evt) {
-        $('#showBBRequestButton').fadeOut();
-        $('#requestBitachonBuilderForm').animate({
-            'width': 100
-        }, null, null, function() {
-            $('#BBRequestBox').fadeIn();
-        });
-        return false;
-    });
-    
-    /// Hide the BB Request Section /
-    $('#hideBBRequestButton').click(function(evt) {
-        $('BBRequestBox').fadeOut();
-         $('#showBBRequestButton').fadeIn();
-        $('#requestBitachonBuilderForm').animate({
-            'width': collapsedWidth
-        }, null, null, null);
-        return false;
-    });
-    
-    */
-    
-   
-    
     $('#showRequestFormButton').click(
     	function(evt){
     		
@@ -55,6 +30,10 @@ $(document).ready(function(){
     			$('#requestForm').html(formObj);
     		}
     		
+    
+    		// Submit the bitachon builder request via AJAX
+    		$('#submitButton').click(formClickHandler(evt));
+    
     		//Hide the "show" button
     		$('#showRequestFormButton').fadeOut();
     		
@@ -108,9 +87,6 @@ $(document).ready(function(){
     		
     		//fade the hide button in
     		$('#showRequestFormButton').fadeIn();
-    		
-    		//TODO: Fix this bug which prevents the form from properly re-appearing for some reason.
-			//$('#requestFormContainer').html(''+formHTML+'');
     		    		
     		return false;
     	}
@@ -174,10 +150,10 @@ $(document).ready(function(){
         });
         return false;
     }); 
-    
-    /* Submit the bitachon builder request via AJAX*/
-    
-    $('#submitButton').click(function(evt){
+  	
+});   
+
+function formClickHandler(evt){
     
     	//Store the contents of the form
     	var addressArray = new Array($('#name').val(), $('#street').val(), $('#city').val(), $('#state').val(), $('#zip').val());
@@ -201,6 +177,4 @@ $(document).ready(function(){
 				}
 		});
   	return false;
-	});
-		
-});   
+	}
