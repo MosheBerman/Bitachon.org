@@ -6,7 +6,7 @@
 /
 /	On: October 14, 2010
 /
-/	Last Edited on: December 5, 2010
+/	Last Edited on: January 12, 2011
 /
 /	Contains: The style rules for Bitachon.org
 /
@@ -19,6 +19,7 @@
 /* --- Error text color: #bb2026 --- */
 
 /* The universal rules */
+
 body{
 	background-color: #174e67;
 	text-align: center;
@@ -32,6 +33,7 @@ body{
 }
 
 /* The topbar */
+
 #topbar{
 	margin: auto 0;
 	height: 240px;
@@ -48,6 +50,7 @@ body{
 }
 
 /* The bitachon image banner */
+
 #banner{
 	height: 170px;
 	background-color: #000;
@@ -58,15 +61,17 @@ body{
 }
 
 /* Everything with a dark blue bg */
+
 .dark-bg{
 	background-color: #102f3f;
 }
 
 /* topbar links */
+
 .link{
 	text-decoration: none;
 	color: #3d5c6c;
-	text-shadow: 2px 2px 2px #000;
+	text-shadow: 0 2px 2px #000;
 	font-size: 2em;
 	clear: none;
 	margin: 10px 25px;
@@ -107,7 +112,7 @@ body{
 	
 }
 
-/* Shiny links hover effect */
+/* Shiny links hover effect (only works in CSS3 browsers)  */
 #footer .shiny-link:hover{
 	-moz-text-shadow: 0px 0px 4px #3d5c6c;
 	-webkit-text-shadow: 0px 0px 4px #3d5c6c;
@@ -159,12 +164,6 @@ body{
     height: 165px;
 }
 
-/* The request form in the footer */
-#footer #requestBitachonBuilder{
-    display: none;
-    height: 215px;
-}
-
 /* About the site. */
 #footer #aboutSite{
     display: none;
@@ -210,28 +209,6 @@ body{
 	margin-bottom: 0.5em;
 }
 
-/* Style labels in the BB request form */
-#footer form label{
-	font-weight: bold;
-	clear: both;
-  	float: left;
-  	text-align: right;
-	margin: 0.3em 0;	
-	height: 1em;
-	line-height: 1em;
-	width: 70px;
-}
-
-/* Style the input boxes in the BB request form */
-#footer form .textbox{
-	float: left;
-	margin: 0.3em 0;
-	height: 1em;
-	line-height: 1em;
-	width: 100px;
-	margin-left: 10px;
-}
-
 /* Style address information in the footer */
 #footer address{
 	margin: auto;
@@ -247,7 +224,7 @@ body{
 
 /* Style the submit button on the BB request form */
 
-#footer #submitButton{
+#ssubmitButton{
 	display: block;
 	clear: both;
 	margin: auto;
@@ -266,7 +243,7 @@ body{
 	border-radius: 5px;	
 }
 
-#footer #submitButton:hover{
+#ssubmitButton:hover{
 	display: block;
 	clear: both;
 	margin: auto;
@@ -281,18 +258,6 @@ body{
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;	
-}
-
-/* Add padding to the BB request box */
-#footer #BBRequestBox{
-	padding: 5px;
-	margin: 0;	
-}
-
-/* Style the response from the BB request form. */
-#footer #BBRequestBox p{
-	line-height: 1.3em;
-	font-weight: normal;
 }
 
 /* Style all of the "close" buttons in the footer views */
@@ -389,3 +354,118 @@ h6{
 	-moz-border-radius: 15px;
 	border-radius: 15px;
 }
+
+/* ---------------------------------- Bitachon Builder Request Form Related -------------------------- */
+
+/* The "Get the bitachon builder" button */
+
+#flyout{
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 160px;
+	height: 200px;
+}
+
+#showRequestFormButton{
+	position: absolute;
+	left: 20px;
+	top: 0;
+	width: 141px;
+	height: 200px;
+	display: block;
+	background: transparent url('images/bbfront.png') no-repeat top left;
+	text-indent: -9999px;
+}
+
+#showRequestFormButton:hover{
+	position: absolute;
+	left: 20px;
+	top: 0;
+	width: 141px;
+	height: 200px;
+	display: block;
+	background: transparent url('images/bbfront_glow.png') no-repeat top left;
+	text-indent: -9999px;
+}
+
+#hideRequestFormButton{
+	float: left;
+	position: relative;
+	top: -10px;
+	height: 30px;
+	width: 30px;
+	background: transparent url('images/close_button.png') no-repeat top left;	
+	text-indent: -9999px;
+	z-index: 2;
+}
+
+#requestFormContainer{
+	display: none;
+	background: #000;
+	width: 100%;
+	margin: 15px auto;
+	height: 160px;
+	text-align: center;
+}
+
+#requestForm label{
+	float: left;
+	color: #000;
+	font-weight: bold;
+	clear: both;
+  	text-align: right;
+	margin: 0.3em auto;	
+	height: 1em;
+	line-height: 1em;
+	width: 70px;
+	z-index: 1;
+}
+
+#requestFormWindow{
+	width: 270px;
+	margin: auto;
+}
+
+/* Style the input boxes in the BB request form */
+	
+#requestForm .textbox{
+	position: relative;
+	color: #000;
+	font-weight: bold;
+  	text-align: left;
+	height: 1em;
+	line-height: 1em;
+	width: 100px;
+	z-index: 1;
+}
+
+#requestForm #submitButton{
+	width: 180px;
+	display: block;
+	clear: both;
+	margin: auto;
+}
+
+#requestForm{
+	display: block;
+	position: relative;
+	top: -10px;
+	height: 200px;
+	width: 250px;
+	padding: 50px 10px 0 10px;
+	margin: auto;
+	background: url('images/form_bg.png') no-repeat;
+	text-align: center;
+	z-index: 1;
+}
+
+.formResponse{
+	width: 230px;
+	padding: 10px;
+	color: #485c65; 
+	text-shadow: 0px -1px 1px #333;
+}
+
+/* ---------------------------------- End Bitachon Request Form Related ------------------------------ */
