@@ -1,0 +1,9 @@
+/* 
+
+	IE Fixes for Bitachon.org
+
+*/
+
+#hideRequestFormButton{
+	background: transparent url('./images/close_button.png') no-repeat top left;
+}
